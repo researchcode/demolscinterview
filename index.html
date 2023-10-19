@@ -368,11 +368,9 @@
         <div class="row gx-5 justify-content-center">
           <div class="col-xxl-8">
             <div class="text-center my-5">
-              <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-              <p class="lead fw-light mb-4">My name is Start Bootstrap and I help brands grow.</p>
-              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui
-                unde quisquam consequatur autem. Eveniet quasi nobis aliquid cumque officiis sed rem iure ipsa!
-                Praesentium ratione atque dolorem?</p>
+              <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Sobre Nosotros</span></h2>
+              <p class="lead fw-light mb-4">Semillero en Accesibilidad Web y Usabilidad</p>
+              <p class="text-muted">Esta herramienta se creó con el fin de hacer pruebas de la herramienta Teachable Machine para la identificación de letras del abecedario en LSC (Lengua de Señas Colombiana).</p>
               <div class="d-flex justify-content-center fs-2 gap-4">
                 <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a>
                 <a class="text-gradient" href="#!"><i class="bi bi-linkedin"></i></a>
@@ -456,8 +454,10 @@
       const prediction = await model.predict(webcam.canvas);
       for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
-          prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+          //prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+          "<p><strong>"+prediction[i].className + ":</strong></p> <div style='background-color:#000000;height:24px;width:"+(prediction[i].probability.toFixed(2) * 100)+"%'></div>";
         labelContainer.childNodes[i].innerHTML = classPrediction;
+        
         //alert(prediction[i].probability.toFixed(2));
         /*if (prediction[i].probability.toFixed(2) > 90) {
             setTimeout(()=>{
